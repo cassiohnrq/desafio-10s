@@ -199,3 +199,31 @@
       margin-bottom: 5px;
       margin-top: 0px;
     }
+
+    @media screen and (max-width: 546px) {
+      .painel {
+        width: 200px;
+        padding: 15px;
+      }
+
+      #cronometro {
+        font-size: 6em;
+      }
+
+      #carregamento {
+        width: 300px;
+      }
+      .footer {
+        font-size: 0.5em;
+      }
+      .info {
+        font-size: 0.5em;
+      }
+      .painel h2 {
+        font-size: 0.7em;
+      }
+      .painel p {
+        font-size: 0.5em;
+      }
+      
+    }
