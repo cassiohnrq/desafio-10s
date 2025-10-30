@@ -1,24 +1,74 @@
- @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
   body {
-    background: #151f6d;
+    font-family: 'Share Tech Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    background: #00b7ff9a;
     color: #ff8300;
-    font-family: 'Rubik Mono One', monospace;
     margin: 0;
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
+
+  body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/background.png) no-repeat center center;
+  background-size: cover;
+  opacity: 0.15; /* opacidade da imagem */
+  z-index: -1; /* atrás do conteúdo */
+}
+
+  .centro {
+    text-align: center;
+    font-size: 1.5em;
+    width: 60%;
+    border: 1px solid rgba(0, 178, 184, 0.205);
+    border-radius: 2000px;
+    opacity: 0.5;
+    padding: 100px;
+    box-sizing: border-box;
+    background-color: rgba(159, 252, 255, 0.295);
+    box-shadow: 0px 0px 20px 10px #008cff94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+  }
+  
+  #cronometro {
+    color: #fff;
+    font-size: 9em;
+    text-align: center;
+    width: 8ch;
+    white-space: nowrap;
+    text-shadow: 
+        /* 1ª camada: Um brilho suave e espalhado */
+        0 0 10px rgba(0, 192, 255, 0.7), 
+        /* 2ª camada: Um brilho mais intenso e focado */
+        0 0 20px rgba(0, 192, 255, 0.9),
+        /* 3ª camada: Um brilho azul mais profundo para a aura */
+        0 0 40px rgba(0, 192, 255, 0.5);
+  }
+
 
   .painel {
     position: fixed;
     top: 0;
     width: 250px;
     height: 100vh;
-    background: #000c64;
-    border: 1px solid #222;
+    background: rgba(159, 252, 255, 0.295) ;
+    border: 1px solid rgba(0, 178, 184, 0.205);
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -40,7 +90,7 @@
   }
 
   .painel p {
-    color: #f7f7f7;
+    color: #000000;
     font-size: 0.9em;
   }
 
@@ -56,7 +106,7 @@
 
   #ranking li {
     margin: 5px 0;
-    color: #ccc;
+    color: #000000af;
     border: rgba(255, 255, 255, 0.6) 1px solid ;
     border-radius: 5px;
     padding: 4px 8px;
@@ -78,19 +128,7 @@
     background: #4caf50;
   }
 
-  .centro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
-  #cronometro {
-    font-size: 8em;
-    text-align: center;
-    width: 8ch;
-    white-space: nowrap;
-  }
 
   #premio {
     display: none;
@@ -130,11 +168,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 7, 66, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
   }
 
   #cadastro h2 {
@@ -179,20 +218,19 @@
     position: absolute;
     bottom: 5px;
     font-size: 0.6em;
-    color: #666;
     text-align: center;
-    color: #fff;
+    color: #444444;
     padding: 5px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 4px rgba(194, 194, 194, 0.8);
   }
 		a:link, a:visited {
- 			color: #fff;
+ 			color: #444444;
  			text-decoration: none;
   			display: inline-block;
 		}
 
 		a:hover, a:active {
-  			color: white;
+  			color: rgb(46, 46, 46);
 		}
     .logo {
       width: 200px;
@@ -200,14 +238,20 @@
       margin-top: 0px;
     }
 
-    @media screen and (max-width: 546px) {
+    @media screen and (max-width: 820px) {
       .painel {
-        width: 200px;
+        width: 120px;
         padding: 15px;
+      }
+      .centro {
+        width: 60%;
+        display: flex;
+        align-items: flex-start;
       }
 
       #cronometro {
-        font-size: 6em;
+        font-size: 1.2em;
+        align-items: flex-start;
       }
 
       #carregamento {
@@ -225,5 +269,20 @@
       .painel p {
         font-size: 0.5em;
       }
+      .painel.esquerdo {
+        display: none;
+      }
+
+      @media screen and (max-width: 460px) {
+        #carregamento {
+          width: 200px;
+        }
+        .painel.direito, .painel.esquerdo {
+          display: none;
+        }
+        
+      }
       
     }
+
+    
