@@ -178,7 +178,7 @@ function tocarBip(frequencia = 888, duracao = 0.1, volume = 0.05) {
     const ordenado = [...jogadores].sort((a, b) => Math.abs(a.diferenca) - Math.abs(b.diferenca));
     ordenado.slice(0, 10).forEach((jogador, i) => {
       const li = document.createElement('li');
-      li.innerHTML = `${i + 1}. ${jogador.nome}<br><span style="color: #ff8300; display: block;">${jogador.tempo.toFixed(3)}s</span>`;
+      li.innerHTML = `${i + 1}. ${jogador.nome}<br><span style="color: ##274B66; display: block;">${jogador.tempo.toFixed(3)}s</span>`;
       rankingList.appendChild(li);
     });
   }
