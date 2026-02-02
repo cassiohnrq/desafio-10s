@@ -23,9 +23,13 @@
   <div class="painel esquerdo">
     <img src="assets/images/v03.png" alt="Logo Cassio" class="logo">
     <h2>🕹️ Instruções</h2>
-    <p>Pressione <strong>Espaço</strong> para iniciar o cronômetro.</p>
-    <p>Pause exatamente em <strong>10.000 segundos</strong> para ganhar!</p>
-    <p>Após cada tentativa, pressione <strong>Espaço</strong> para cadastrar novo jogador e tentar de novo.</p>
+    <p>Pressione <strong>Iniciar</strong> para iniciar o cronômetro.</p>
+    <p>Pause o mais próximo de <strong>10.000 segundos</strong> para ganhar!</p>
+    <p>Após cada tentativa, pressione <strong>Iniciar</strong> para cadastrar novo jogador e tentar de novo.</p>
+    <button id="btnIniciarJogo" class="btn-iniciar button">
+  ▶ Iniciar Cronômetro
+</button>
+
     <div class="footer"> 
       &copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.<br>
 								Criado por: <a href="https://wa.me/5575999061165" target="_blank">Cassio Henrique</a>
@@ -36,7 +40,7 @@
     <div id="cronometro">00.000</div>
     <div id="premio">🎉 Você ganhou! 🎉</div>
     <div id="carregamento"><div id="barra"></div></div>
-    <div class="info">Pressione espaço para começar...</div>
+    <div class="info">Pressione iniciar para começar...</div>
   </div>
 
   <div class="painel direito">
