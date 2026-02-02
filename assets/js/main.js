@@ -168,7 +168,7 @@ function tocarBip(frequencia = 888, duracao = 0.1, volume = 0.05) {
       info.textContent = '🎉 Parabéns! ';
     } else {
       premio.style.display = 'none';
-      info.textContent = `⏸ Você parou em ${segundos.toFixed(3)}s — pressione espaço para novo jogador.`;
+      info.textContent = `⏸ Você parou em ${segundos.toFixed(3)}s — pressione iniciar para novo jogador.`;
     }
 
     jogadores.push({ nome: nomeUsuario, telefone: telefoneUsuario, cliente: clienteTipo, tempo: segundos, diferenca });
