@@ -7,6 +7,8 @@
   const rankingList = document.querySelector('#ranking ol');
   const btnBaixar = document.querySelector('#baixarCSV');
   const iniciarBtn = document.querySelector('#iniciarJogo');
+  const btnIniciarJogo = document.querySelector('#btnIniciarJogo');
+
 
   let nomeUsuario = '';
   let telefoneUsuario = '';
@@ -18,27 +20,29 @@
   let terminouRodada = false;
   let jogadores = JSON.parse(localStorage.getItem('ranking')) || [];
 
-  // === EVENTO TECLA ESPAÇO ===
-  document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
-      e.preventDefault();
+  btnIniciarJogo.addEventListener('click', () => {
 
-      // Se o cronômetro está rodando, para
-      if (contando) {
-        pausarCronometro();
-        return;
-      }
+  // Se terminou a rodada ou não tem usuário, mostra cadastro
+  if (terminouRodada || !nomeUsuario) {
+    mostrarCadastro();
+    return;
+  }
 
-      // Se terminou rodada, pede novo cadastro
-      if (terminouRodada || !nomeUsuario) {
-        mostrarCadastro();
-        return;
-      }
+  // Se não estiver contando, inicia normalmente
+  if (!contando) {
+    iniciarComCarregamento();
+  }
+});
 
-      // Se tudo certo, inicia
-      iniciarComCarregamento();
-    }
-  });
+
+  // === TECLA ESPAÇO: APENAS PARA PARAR ===
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && contando) {
+    e.preventDefault();
+    pausarCronometro();
+  }
+});
+
 
   // === BOTÃO CADASTRO ===
   iniciarBtn.addEventListener('click', () => {
@@ -159,9 +163,9 @@ function tocarBip(frequencia = 888, duracao = 0.1, volume = 0.05) {
     const segundos = tempoDecorrido / 1000;
     const diferenca = segundos - 10.000;
 
-    if (Math.abs(diferenca) < 0.001) {
+    if (Math.abs(diferenca) < 0.100) {
       premio.style.display = 'block';
-      info.textContent = '🎉 Parabéns! Tempo exato!';
+      info.textContent = '🎉 Parabéns! ';
     } else {
       premio.style.display = 'none';
       info.textContent = `⏸ Você parou em ${segundos.toFixed(3)}s — pressione espaço para novo jogador.`;
