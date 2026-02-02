@@ -163,7 +163,9 @@ function tocarBip(frequencia = 888, duracao = 0.1, volume = 0.05) {
     const segundos = tempoDecorrido / 1000;
     const diferenca = segundos - 10.000;
 
-    if (Math.abs(diferenca) < 0.100) {
+  // Altere esse numero para ajustar a margem de erro aceitável 
+  // Ex: 0.050 = ganhará se estiver entre 9.950 e 10.050
+    if (Math.abs(diferenca) < 0.050) {
       premio.style.display = 'block';
       info.textContent = '🎉 Parabéns! ';
     } else {
