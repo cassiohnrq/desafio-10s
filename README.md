@@ -14,7 +14,7 @@ Mas antes de cada tentativa, é preciso preencher um **cadastro**, que pode ser 
 
 - ⏲️ **Timer de precisão**
   - Contagem regressiva com **milésimos de segundo**.
-  - O desafio é clicar em *“Parar”* exatamente quando o tempo atingir **10.000 segundos**.
+  - Pressione **Enter** para parar o cronômetro o mais próximo possível de **10.000 segundos**.
 
 - 🎁 **Mensagem de vitória**
   - Ao atingir o tempo exato, aparece um texto indicando que o participante ganhou um prêmio.

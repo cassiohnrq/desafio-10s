@@ -38,9 +38,9 @@ btnIniciarJogo.addEventListener('click', () => {
   }
 });
 
-// === TECLA ESPAÇO: APENAS PARA PARAR ===
+// === TECLA ENTER: APENAS PARA PARAR ===
 document.addEventListener('keydown', (e) => {
-  if (e.code === 'Space' && contando) {
+  if (e.code === 'Enter' && contando) {
     e.preventDefault();
     pausarCronometro();
   }
@@ -61,7 +61,7 @@ iniciarBtn.addEventListener('click', () => {
   const telefoneNormalizado = normalizarTelefone(telefone);
   const jogadasDoTelefone = jogadores.filter(j => normalizarTelefone(j.telefone) === telefoneNormalizado).length;
   if (jogadasDoTelefone >= 2) {
-    alert('Este telefone já atingiu o limite de 2 jogadas. Obrigado por participar!');
+    alert('Este usuário já atingiu o limite de 2 jogadas. Obrigado por participar!');
     return;
   }
 
